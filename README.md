@@ -26,3 +26,10 @@ docker run -v $(pwd):/app:ro -p 3000:3000 --name node-app node-app-image
 
 ## Pass Env Variables
 docker run -v $(pwd):/app --env PORT=4000 -p 3000:4000 --name node-app node-app-image
+
+## Docker Compose
+(up all services within docker-compose.yml with detach)
+docker-compose up -d
+
+(Brings down all services with their volumes)
+docker-compose down -v
