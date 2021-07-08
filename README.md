@@ -31,5 +31,8 @@ docker run -v $(pwd):/app --env PORT=4000 -p 3000:4000 --name node-app node-app-
 (up all services within docker-compose.yml with detach)
 docker-compose up -d
 
+(building images again and adding files for configuration.. order matters)
+docker-compose -f docker-compose.yml -f docker-compose.prod.yml up -d --build
+
 (Brings down all services with their volumes)
 docker-compose down -v
