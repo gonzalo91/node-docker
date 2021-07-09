@@ -34,5 +34,9 @@ docker-compose up -d
 (building images again and adding files for configuration.. order matters)
 docker-compose -f docker-compose.yml -f docker-compose.prod.yml up -d --build
 
-(Brings down all services with their volumes)
+(Brings down all services with their volumes, incluiding those which are use for databases)
 docker-compose down -v
+
+(It will delete all al volumes unused )
+docker-compose -f docker-compose.yml -f docker-compose.prod.yml down;
+docker volume prune;
