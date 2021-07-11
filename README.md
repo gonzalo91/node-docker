@@ -38,6 +38,11 @@ docker-compose -f docker-compose.yml -f docker-compose.dev.yml up -d --build
 (Brings down all services with their volumes, incluiding those which are use for databases)
 docker-compose down -v
 
-(It will delete all al volumes unused )
+(It will delete all volumes unused )
 docker-compose -f docker-compose.yml -f docker-compose.prod.yml down;
 docker volume prune;
+
+(docker stack)
+docker stack deploy [-c file_docker-compose] [Stackname]
+docker stack deploy -c docker-compose.yml -c docker-compose.dev.yml nodeapp
+
