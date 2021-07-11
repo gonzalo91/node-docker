@@ -52,7 +52,7 @@ mongoose.connect(mongoURL ,{
 app.use(express.json())
 
 app.get('/', (req, res) => {
-    res.send('<h2>Hello world !</h2>')
+    res.send('<h2>Hello world ! - Changes!!!</h2>')
 })
 
 app.use("/api/posts", postRouter)
