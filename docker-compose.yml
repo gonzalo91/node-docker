@@ -12,6 +12,7 @@ services:
             - PORT=3000
         depends_on: 
             - mongo-db
+        image: zalollauri/node-app
     mongo-db:
         image: mongo
         environment: 
