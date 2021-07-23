@@ -10,7 +10,7 @@ const postRouter = require('./routes/postRoutes')
 const userRouter = require('./routes/userRoutes')
 
 const app = express();
-
+console.log(process.env)
 let redisClient = redis.createClient({
     host: REDIS_URL,
     port: REDIS_PORT,
@@ -51,7 +51,7 @@ mongoose.connect(mongoURL ,{
 
 app.use(express.json())
 
-app.get('/', (req, res) => {
+app.get('/api', (req, res) => {
     res.send('<h2>Hello world ! - Changes!!! To docker hub</h2>')
 })
 
@@ -59,5 +59,5 @@ app.use("/api/posts", postRouter)
 app.use("/api/auth", userRouter)
 
 app.listen(port, ()=>{
-    console.log('listening on port: ' + port)
+    console.log('listening on port[s]: ' + port)
 })
